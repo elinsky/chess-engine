@@ -1,0 +1,63 @@
+[Event "4. IIFL Wealth Mumbai Op"]
+[Site "Mumbai IND"]
+[Date "2018.12.30"]
+[Round "1.15"]
+[White "Safranska, Anda"]
+[Black "Ankit, R Rajpara"]
+[Result "1/2-1/2"]
+[WhiteElo "2189"]
+[BlackElo "2465"]
+[ECO "A07"]
+[EventDate "2018.12.30"]
+
+1.g3 d5 2.Bg2 c6 3.Nf3 Nf6 4.O-O Bg4 5.d3 Nbd7 6.Qe1 e5 7.e4 dxe4 8.dxe4
+Bc5 9.h3 Be6 10.Nbd2 h6 11.Qe2 O-O 12.Kh2 Re8 13.Nc4 Qc7 14.Nh4 b5 15.Ne3
+Bf8 16.b3 g6 17.Ng4 Kh7 18.Nxf6+ Nxf6 19.Bb2 Bg7 20.a4 a6 21.Kh1 Nd7 22.
+Nf3 Nb6 23.axb5 axb5 24.Rxa8 Rxa8 25.Ra1 Rxa1+ 26.Bxa1 Nd7 27.Bc3 Bf8 28.
+Nh2 Bc5 29.Nf1 Qa7 30.Be1 Qa1 31.Kh2 Bd4 32.Ne3 Bc3 33.Bxc3 Qxc3 34.h4 h5
+35.Kg1 Nc5 36.Kh2 Qd4 37.f3 Kg7 38.Nd1 b4 39.Bf1 f5 40.exf5 gxf5 41.Kg2 f4
+42.gxf4 exf4 43.Nf2 Qf6 44.Kg1 Bd5 45.Nh3 Ne6 46.Qg2+ Kf8 47.Ng5 Nxg5 48.
+hxg5 Qd4+ 49.Kh2 Qe3 50.Qh3 Qxf3 51.Qf5+ Ke8 52.Qe5+ Kf8 53.Qf6+ Bf7 54.
+Qd8+ Kg7 55.Qf6+ Kg8 56.Qd8+ Kg7 57.Qf6+ Kf8 58.Qd8+ Kg7 1/2-1/2
+
+[Event "World Blitz 2018"]
+[Site "St Petersburg RUS"]
+[Date "2018.12.30"]
+[Round "14.69"]
+[White "Eliseev, Alexey"]
+[Black "Alekseenko, Kirill"]
+[Result "0-1"]
+[WhiteElo "2379"]
+[BlackElo "2638"]
+[ECO "A09"]
+[EventDate "2018.12.29"]
+
+1.Nf3 d5 2.c4 d4 3.b4 f6 4.d3 e5 5.a3 c5 6.g3 Ne7 7.Bg2 Nf5 8.Nbd2 Be7 9.
+O-O O-O 10.bxc5 Bxc5 11.Ne4 Be7 12.a4 Na6 13.Ba3 Rb8 14.a5 Be6 15.Qd2 Nd6
+16.Nxd6 Bxd6 17.Rfb1 Bxa3 18.Rxa3 Nc5 19.Rb5 Qd6 20.Qb4 Rfc8 21.Nd2 Qc7
+22.Ne4 b6 23.axb6 axb6 24.Nxc5 bxc5 25.Qb1 Bd7 26.Rxb8 Rxb8 27.Bd5+ Kf8
+28.Qa1 Bh3 29.Ra8 Qd8 30.Rxb8 Qxb8 31.f3 g6 32.Kf2 Kg7 33.Qa5 Qb1 34.Qe1
+Qxe1+ 35.Kxe1 Bd7 36.Kf2 Kf8 37.Ke1 Ke7 38.Kf2 Kd6 39.Ke1 Kc7 40.Kf2 Kb6
+41.f4 Kc7 42.Bf7 Kd6 43.h4 Ke7 44.Bd5 Ba4 45.Be4 Be8 46.Bd5 Bd7 47.Bg8 Kf8
+48.Bd5 Kg7 49.Be4 Be6 50.Bc6 Kh6 51.fxe5 fxe5 52.Be4 Kg7 53.Bc6 Kf6 54.Kf3
+g5 55.Be8 h6 56.Kf2 Bg4 57.Bc6 gxh4 58.gxh4 Kf5 59.Bd7+ Kf4 60.Bc6 Bf5 61.
+Bg2 Kg4 62.h5 Kxh5 63.Kg3 Kg5 64.Bc6 Bg4 65.Kf2 Kf4 66.Bd5 h5 67.Bc6 h4
+68.Bd5 Bf5 69.Bh1 e4 0-1
+
+[Event "World Blitz Women 2018"]
+[Site "St Petersburg RUS"]
+[Date "2018.12.30"]
+[Round "13.42"]
+[White "Bezgodova, Svetlana"]
+[Black "Petrova, Irina"]
+[Result "1-0"]
+[WhiteElo "2046"]
+[BlackElo "2124"]
+[ECO "A07"]
+[EventDate "2018.12.29"]
+
+1.Nf3 d5 2.g3 Nf6 3.Bg2 Bg4 4.O-O c6 5.d3 Nbd7 6.c4 e6 7.Be3 Bd6 8.Qb3 Qc7
+9.Nc3 O-O 10.Rac1 Rac8 11.cxd5 exd5 12.Nb5 Qb8 13.Nxd6 Qxd6 14.Qxb7 Bxf3
+15.Bxf3 Ne5 16.Bc5 Nxf3+ 17.exf3 Qe6 18.Bxf8 Rxf8 19.Qxc6 Qh3 20.Rfe1 Qh5
+21.Kg2 Qg6 22.d4 Qg5 23.Qd6 Qd2 24.Qxf8+ 1-0
+

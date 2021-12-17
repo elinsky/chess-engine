@@ -1,0 +1,2 @@
+class InvalidHalfMoveError(Exception):
+    pass
