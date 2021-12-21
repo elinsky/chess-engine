@@ -51,6 +51,26 @@ def convert_fen_to_array(fen: str):
 
 
 def convert_piece_list_to_array(piece_position_list: list[int]):
+    """
+    Takes as input a list of integers. Each integer represents the presence of a
+    piece on a chess board. 0 = A1, 1 = B1, 2 = C1, ..., 7 = A2, ..., 63 = H8.
+    Returns a 8x8 one-hot encoded numpy array indicating the presence or
+    absence of pieces on the board. Most of the time you will want to pass in
+    a list of integers for a single piece. E.g. [0, 8] will return the starting
+    position of white's rooks:
+
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    1 0 0 0 0 0 0 1
+
+    :param piece_position_list: List[int] location of the pieces on the board.
+    :return: 8x8 one-hot encoded numpy array.
+    """
     piece_array = np.zeros((8, 8), np.int8)
     for piece in piece_position_list:
         row = 7 - (piece // 8)

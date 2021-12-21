@@ -5,8 +5,7 @@ mkdir -p raw
 wget https://archive.org/download/KingBase2019/KingBase2019-pgn.zip -P ./raw
 
 # Unzip file
-unzip KingBase2019-pgn.zip
+unzip ./raw/KingBase2019-pgn.zip -d ./raw
 
 # remove zip file
-rm  KingBase2019-pgn.zip
-
+rm ./raw/KingBase2019-pgn.zip

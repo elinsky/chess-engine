@@ -1,4 +1,6 @@
 import io
+from os.path import dirname
+import argparse
 import re
 from random import randrange, seed
 from typing import Tuple
@@ -7,9 +9,7 @@ import chess.pgn
 import numpy as np
 
 from chess_engine.data.exceptions import InvalidHalfMoveError
-from data.serializer import convert_fen_to_array
-
-seed(21)
+from chess_engine.data.serializer import convert_fen_to_array
 
 
 def get_last_halfmove_number(game: chess.pgn.Game) -> int:
@@ -132,5 +132,28 @@ def create_state_result_dataset(dataset_filename, max_n=None):
 
 
 if __name__ == '__main__':
-    filename = '../../data/raw/KingBase2019-A00-A39.pgn'
-    dataset = create_state_result_dataset(filename, max_n=5)
+    # TODO - add an overall description.
+    parser = argparse.ArgumentParser(description='Converts a clean PGN file'
+                                                 'containing multiple PGNs into '
+                                                 'a dataset for supervised learning.')
+    # ../chess-engine/data/cleaned/clean_dataset.pgn
+    clean_dataset_path = dirname(dirname(dirname(__file__))) + '/data/cleaned/clean_dataset.pgn'
+    parser.add_argument("--clean_dataset_path",
+                        default=clean_dataset_path,
+                        help='The absolute path to the clean_dataset.pgn file. '
+                             'This should be the output from  clean_dataset.sh')
+    # ../chess-engine/data/features/
+    target_dir = dirname(dirname(dirname(__file__))) + '/data/features/'
+    parser.add_argument('--target_dir',
+                        default=target_dir,
+                        help='directory to place the numpy features and labels.')
+    parser.add_argument("--max_n",
+                        default=None,
+                        type=int,
+                        help='Max number of games to parse and output into the '
+                             'numpy dataset.')
+    args = parser.parse_args()
+    x, y = create_state_result_dataset(args.clean_dataset_path,
+                                       max_n=args.max_n)
+    np.save(target_dir + 'x.npy', x)
+    np.save(target_dir + 'y.npy', y)
