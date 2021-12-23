@@ -9,7 +9,8 @@ import chess.pgn
 import numpy as np
 
 from chess_engine.data.exceptions import InvalidHalfMoveError
-from chess_engine.data.serializer import convert_fen_to_array
+from chess_engine.data.serializer import convert_fen_to_array, \
+    convert_game_result_to_int
 
 
 def get_last_halfmove_number(game: chess.pgn.Game) -> int:
@@ -115,11 +116,12 @@ def create_state_result_dataset(dataset_filename, max_n=None):
     y_list = []
 
     for game in extract_game(dataset_filename):
-        fen, result = sample_random_game_state_result(game)
+        fen, game_result = sample_random_game_state_result(game)
         array = convert_fen_to_array(fen)
+        game_result_int = convert_game_result_to_int(game_result)
         # TODO - exclude games that aren't finished (*). And maybe exclude draws.
         x_list.append(array)
-        y_list.append(result)
+        y_list.append(game_result_int)
         if max_n:
             max_n -= 1
             if max_n == 0:

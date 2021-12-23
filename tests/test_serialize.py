@@ -2,7 +2,8 @@ import unittest
 
 import numpy as np
 
-from chess_engine.data.serializer import convert_fen_to_array, convert_piece_list_to_array
+from chess_engine.data.serializer import convert_fen_to_array, \
+    convert_piece_list_to_array, convert_game_result_to_int
 
 
 class TestSerializer(unittest.TestCase):
@@ -160,3 +161,36 @@ class TestSerializer(unittest.TestCase):
         expected[6, 0] = 1
         expected[1, 7] = 1
         self.assertTrue(np.array_equal(actual, expected))
+
+    def test_convert_win_to_1(self):
+        # Arrange
+        game_result = '1-0'
+
+        # Act
+        actual = convert_game_result_to_int(game_result)
+        expected = 1
+
+        # Assert
+        self.assertEqual(actual, expected)
+
+    def test_convert_tie_to_0(self):
+        # Arrange
+        game_result = '1/2-1/2'
+
+        # Act
+        actual = convert_game_result_to_int(game_result)
+        expected = 0
+
+        # Assert
+        self.assertEqual(actual, expected)
+
+    def test_convert_loss_to_negative_1(self):
+        # Arrange
+        game_result = '0-1'
+
+        # Act
+        actual = convert_game_result_to_int(game_result)
+        expected = -1
+
+        # Assert
+        self.assertEqual(actual, expected)

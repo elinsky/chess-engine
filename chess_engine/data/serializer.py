@@ -78,3 +78,8 @@ def convert_piece_list_to_array(piece_position_list: list[int]):
         piece_array[row, col] = 1
 
     return piece_array
+
+
+def convert_game_result_to_int(game_result: str) -> int:
+    result_map = {'1-0': 1, '0-1': -1, '1/2-1/2': 0}
+    return result_map[game_result]
