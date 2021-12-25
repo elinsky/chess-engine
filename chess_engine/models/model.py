@@ -2,6 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.utils.tensorboard import SummaryWriter
 
 
 class Net(nn.Module):
@@ -31,6 +32,8 @@ class Net(nn.Module):
 
 
 def training_loop(n_epochs, optimizer, model, loss_fn, x_train, x_validate, y_train, y_validate):
+    writer = SummaryWriter()
+
     for epoch in range(1, n_epochs + 1):
         y_train_pred = model(x_train)
         loss_train = loss_fn(y_train_pred, y_train)
@@ -42,9 +45,8 @@ def training_loop(n_epochs, optimizer, model, loss_fn, x_train, x_validate, y_tr
         loss_train.backward()
         optimizer.step()
 
-        if epoch == 1 or epoch % 10 == 0:
-            print(f'Epoch {epoch}, Training loss {loss_train.item():.4f}, '
-                  f'Validation loss {loss_val.item():.4f}')
+        writer.add_scalar("training_loss", loss_train.item(), epoch)
+        writer.add_scalar("validation_loss", loss_val.item(), epoch)
 
 
 if __name__ == '__main__':
