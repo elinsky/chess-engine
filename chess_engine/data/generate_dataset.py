@@ -100,6 +100,11 @@ def extract_game(pgn_file):
                 newline_count = 0
 
 
+def print_dataset_status(max_n):
+    if max_n % 1000 == 0:
+        print(max_n, 'games left to extract.')
+
+
 def create_state_result_dataset(dataset_filename, max_n=None):
     """
     Given a file with multiple PGNs, selects a random state in each PGN,
@@ -117,13 +122,20 @@ def create_state_result_dataset(dataset_filename, max_n=None):
 
     for game in extract_game(dataset_filename):
         fen, game_result = sample_random_game_state_result(game)
+
+        # Filter out draws and incomplete games
+        if game_result in {'1/2-1/2', '*'}:
+            continue
+
         array = convert_fen_to_array(fen)
         game_result_int = convert_game_result_to_int(game_result)
-        # TODO - exclude games that aren't finished (*). And maybe exclude draws.
+
         x_list.append(array)
         y_list.append(game_result_int)
+
         if max_n:
             max_n -= 1
+            print_dataset_status(max_n)
             if max_n == 0:
                 break
 

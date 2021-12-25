@@ -173,24 +173,13 @@ class TestSerializer(unittest.TestCase):
         # Assert
         self.assertEqual(actual, expected)
 
-    def test_convert_tie_to_0(self):
-        # Arrange
-        game_result = '1/2-1/2'
-
-        # Act
-        actual = convert_game_result_to_int(game_result)
-        expected = 0
-
-        # Assert
-        self.assertEqual(actual, expected)
-
-    def test_convert_loss_to_negative_1(self):
+    def test_convert_loss_to_negative_0(self):
         # Arrange
         game_result = '0-1'
 
         # Act
         actual = convert_game_result_to_int(game_result)
-        expected = -1
+        expected = 0
 
         # Assert
         self.assertEqual(actual, expected)
